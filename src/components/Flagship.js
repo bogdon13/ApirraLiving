@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     minHeight: "100%",
     filter: "brightness(30%)",
     zIndex: -1,
+    background: `${theme.palette.primary.main}`,
   },
   container: {
     position: "relative",
