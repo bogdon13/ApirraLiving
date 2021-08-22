@@ -65,7 +65,7 @@ const Flagship = () => {
         <div className={classes.attentionGrabber}>
           <div style={{ textAlign: "center" }}>
             <Typography variant="h1">Apirra Living</Typography>
-            <Typography paddingTop={2} paddingBottom={3} variant="h5">
+            <Typography paddingTop={2} paddingBottom={3} variant="h3">
               Buy better. Build better. Be better.
             </Typography>
             <Button
