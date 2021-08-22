@@ -21,7 +21,6 @@ const Loader = () => {
   return (
     <>
       <LinearProgress />
-      <div className={classes.background}></div>
     </>
   );
 };
