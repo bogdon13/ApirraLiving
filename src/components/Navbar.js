@@ -22,7 +22,6 @@ const navLinks = [
   { title: "Apirra Homes", path: "/apirra-homes" },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
-  { title: "Orarion", path: "/orarion" },
 ];
 
 const useStyles = makeStyles({
@@ -38,6 +37,14 @@ const useStyles = makeStyles({
     textDecoration: `none`,
     color: "#f1f1f1",
     margin: `auto`,
+    textAlign: `center`,
+  },
+  orarion: {
+    margin: `auto`,
+    color: `${theme.palette.secondary.main}`,
+    fontFamily: "Book Antigua, serif",
+    textAlign: `center`,
+    fontSize: `large`,
   },
 });
 
@@ -80,6 +87,15 @@ const Navbar = () => {
                     </ListItem>
                   </Link>
                 ))}
+                <Link href="/orarion" key="Orarion">
+                  <ListItem button>
+                    <ListItemText
+                      disableTypography
+                      primary="ORARION"
+                      className={classes.orarion}
+                    />
+                  </ListItem>
+                </Link>
               </List>
             </Hidden>
           </Container>
