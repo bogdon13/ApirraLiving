@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import Link from "next/link";
 import theme from "../scripts/theme";
+import HideOnScroll from "../components/HideOnScroll";
 
 const navLinks = [
   { title: "Home", path: "/" },
@@ -52,55 +53,57 @@ const Navbar = () => {
   const classes = useStyles();
   return (
     <>
-      <AppBar
-        position="sticky"
-        style={{
-          boxShadow: "none",
-          background: { background: `${theme.palette.primary.main}` },
-        }}
-      >
-        <Toolbar component="nav">
-          <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
-            <Link href="/">
-              <IconButton edge="start" color="inherit" aria-label="home">
-                <Image
-                  src="/logo_no_text.png"
-                  alt="apirra logo"
-                  width={100}
-                  height={100}
-                />
-              </IconButton>
-            </Link>
-            <Hidden smDown>
-              <List
-                component="nav"
-                aria-labelledby="main navigation"
-                className={classes.navDisplayFlex}
-              >
-                {navLinks.map(({ title, path }) => (
-                  <Link href={path} key={title}>
+      <HideOnScroll>
+        <AppBar
+          position="sticky"
+          style={{
+            boxShadow: "none",
+            background: { background: `${theme.palette.primary.main}` },
+          }}
+        >
+          <Toolbar component="nav">
+            <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
+              <Link href="/">
+                <IconButton edge="start" color="inherit" aria-label="home">
+                  <Image
+                    src="/logo_no_text.png"
+                    alt="apirra logo"
+                    width={100}
+                    height={100}
+                  />
+                </IconButton>
+              </Link>
+              <Hidden smDown>
+                <List
+                  component="nav"
+                  aria-labelledby="main navigation"
+                  className={classes.navDisplayFlex}
+                >
+                  {navLinks.map(({ title, path }) => (
+                    <Link href={path} key={title}>
+                      <ListItem button>
+                        <ListItemText
+                          primary={title}
+                          className={classes.linkText}
+                        />
+                      </ListItem>
+                    </Link>
+                  ))}
+                  <Link href="/orarion" key="Orarion">
                     <ListItem button>
                       <ListItemText
-                        primary={title}
-                        className={classes.linkText}
+                        disableTypography
+                        primary="ORARION"
+                        className={classes.orarion}
                       />
                     </ListItem>
                   </Link>
-                ))}
-                <Link href="/orarion" key="Orarion">
-                  <ListItem button>
-                    <ListItemText
-                      disableTypography
-                      primary="ORARION"
-                      className={classes.orarion}
-                    />
-                  </ListItem>
-                </Link>
-              </List>
-            </Hidden>
-          </Container>
-        </Toolbar>
-      </AppBar>
+                </List>
+              </Hidden>
+            </Container>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
     </>
   );
 };
