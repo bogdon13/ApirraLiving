@@ -7,6 +7,7 @@ import Link from "../src/Link";
 import Copyright from "../src/Copyright";
 import { makeStyles } from "@material-ui/styles";
 import Flagship from "../src/components/Flagship";
+import Navbar from "../src/components/Navbar";
 
 const useStyles = makeStyles({
   addPadding: {
@@ -34,6 +35,7 @@ export default function Index() {
   const classes = useStyles();
   return (
     <>
+      <Navbar />
       <Flagship />
       {/* <Container maxWidth="sm">
         <Box sx={{ my: 4 }}>

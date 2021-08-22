@@ -1,11 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { CacheProvider } from '@emotion/react';
-import theme from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Head from "next/head";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { CacheProvider } from "@emotion/react";
+import theme from "../src/theme";
+import createEmotionCache from "../src/createEmotionCache";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -16,7 +16,7 @@ export default function MyApp(props) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>My page</title>
+        <title>Apirra Living</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
