@@ -58,31 +58,33 @@ const Flagship = () => {
       }}
     ></div>
   );
+  const AttentionGrabber = () => {
+    return (
+      <>
+        <Video />
+        <div className={classes.attentionGrabber}>
+          <div style={{ textAlign: "center" }}>
+            <Typography variant="h1">Apirra Living</Typography>
+            <Typography paddingTop={2} paddingBottom={3} variant="h5">
+              Buy better. Build better. Be better.
+            </Typography>
+            <Button
+              variant="outlined"
+              size="large"
+              className={classes.contactButton}
+              color="standard"
+            >
+              Click to Learn More
+            </Button>
+          </div>
+        </div>
+      </>
+    );
+  };
   return (
     <div className={classes.container}>
       <div className={classes.background} />
-      <Loader className={classes.loader} /> ||
-      {
-        <>
-          <Video />
-          <div className={classes.attentionGrabber}>
-            <div style={{ textAlign: "center" }}>
-              <Typography variant="h1">Apirra Living</Typography>
-              <Typography paddingTop={2} paddingBottom={3} variant="h5">
-                Buy better. Build better. Be better.
-              </Typography>
-              <Button
-                variant="outlined"
-                size="large"
-                className={classes.contactButton}
-                color="standard"
-              >
-                Click to Learn More
-              </Button>
-            </div>
-          </div>
-        </>
-      }
+      <Loader className={classes.loader} /> || <AttentionGrabber />
     </div>
   );
 };
