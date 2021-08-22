@@ -5,20 +5,50 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { Menu } from "@material-ui/icons";
+import { ExpandMore, Close } from "@material-ui/icons";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/styles";
 import Link from "next/link";
+import theme from "../scripts/theme";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    padding: "10rem",
+    height: `100vh`,
+    background: `${theme.palette.primary.main}`,
+  },
+  linkText: {
+    textDecoration: `none`,
+    color: "#f1f1f1",
+    margin: `auto`,
+    textAlign: `center`,
+    fontSize: `150%`,
+    padding: "1rem",
+  },
+  itemHover: {
+    borderRadius: "30px",
+    whiteSpace: "nowrap",
+    "&:hover": {
+      backgroundColor: `${theme.palette.primary.hover}`,
+    },
+  },
+  orarion: {
+    margin: `auto`,
+    color: `${theme.palette.orarion.main}`,
+    fontFamily: "Book Antigua, serif",
+    textAlign: `center`,
+    fontSize: `large`,
+  },
+  cancel: {
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 });
 
 const NavDrawer = ({ navLinks }) => {
   const classes = useStyles();
-  const [state, setState] = useState({ right: false });
+  const [state, setState] = useState({ top: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -41,10 +71,25 @@ const NavDrawer = ({ navLinks }) => {
         {navLinks.map(({ title, path }) => (
           <Link href={path} key={title}>
             <ListItem button>
-              <ListItemText primary={title} />
+              <ListItemText
+                disableTypography
+                primary={title}
+                className={classes.linkText}
+              />
             </ListItem>
           </Link>
         ))}
+        <ListItem>
+          <IconButton
+            onClick={toggleDrawer("top", false)}
+            edge="start"
+            color="inherit"
+            aria-label="close menu"
+            className={classes.linkText}
+          >
+            <Close fontSize="large" />
+          </IconButton>
+        </ListItem>
       </List>
     </div>
   );
@@ -54,17 +99,20 @@ const NavDrawer = ({ navLinks }) => {
       <IconButton
         edge="start"
         area-label="menu"
-        onClick={toggleDrawer("right", true)}
+        onClick={toggleDrawer("top", true)}
       >
-        <Menu fontSize="large" style={{ color: `white` }} />
+        <ExpandMore
+          fontSize="large"
+          style={{ color: `white`, zIndex: `999` }}
+        />
       </IconButton>
       <SwipeableDrawer
-        anchor="right"
-        open={state.right}
-        onClose={toggleDrawer("right", false)}
-        onOpen={toggleDrawer("right", true)}
+        anchor="top"
+        open={state.top}
+        onClose={toggleDrawer("top", false)}
+        onOpen={toggleDrawer("top", true)}
       >
-        {navDrawerList("right")}
+        {navDrawerList("top")}
       </SwipeableDrawer>
     </>
   );
