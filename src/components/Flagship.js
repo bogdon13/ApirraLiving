@@ -85,7 +85,7 @@ const Flagship = () => {
     <div className={classes.container}>
       <div className={classes.background} />
       <Loader className={classes.loader} />
-      window.addEventListener("load", function(){<AttentionGrabber />});
+      <AttentionGrabber />
     </div>
   );
 };
