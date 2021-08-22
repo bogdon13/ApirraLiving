@@ -26,6 +26,7 @@ const navLinks = [
   { title: "Apirra Homes", path: "/apirra-homes" },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
+  { title: "ORARION", path: "/orarion" },
 ];
 
 const useStyles = makeStyles({
@@ -54,6 +55,10 @@ const useStyles = makeStyles({
 
 const Navbar = () => {
   const classes = useStyles();
+  const isOrarion = (link) => {
+    if (link === "ORARION") return classes.orarion;
+    else return classes.linkText;
+  };
   return (
     <>
       <HideOnScroll>
@@ -86,21 +91,13 @@ const Navbar = () => {
                     <Link href={path} key={title}>
                       <ListItem button>
                         <ListItemText
+                          disableTypography
                           primary={title}
-                          className={classes.linkText}
+                          className={isOrarion(title)}
                         />
                       </ListItem>
                     </Link>
                   ))}
-                  <Link href="/orarion" key="Orarion">
-                    <ListItem button>
-                      <ListItemText
-                        disableTypography
-                        primary="ORARION"
-                        className={classes.orarion}
-                      />
-                    </ListItem>
-                  </Link>
                 </List>
               </Hidden>
               <Hidden mdUp>
