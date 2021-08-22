@@ -37,11 +37,22 @@ const useStyles = makeStyles({
 
 const Flagship = () => {
   const classes = useStyles();
+  const Video = () => (
+    // <video autoPlay playsInline muted loop className={classes.background}>
+    //   <source src="/apirra-background.mp4" type="video/mp4" />
+    // </video>
+    <div
+      className={classes.background}
+      dangerouslySetInnerHTML={{
+        __html: `<video autoplay playsinline muted loop>
+        <source src="/apirra-background.mp4" type="video/mp4" />
+      </video>`,
+      }}
+    />
+  );
   return (
     <div className={classes.container}>
-      <video autoPlay playsInline muted loop className={classes.background}>
-        <source src="/apirra-background.mp4" type="video/mp4" />
-      </video>
+      <Video />
       <div className={classes.attentionGrabber}>
         <div style={{ textAlign: "center" }}>
           <Typography variant="h1">Apirra Living</Typography>
