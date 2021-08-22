@@ -51,7 +51,8 @@ const Flagship = () => {
         minWidth: 100%;
         minHeight: 100%;
         filter: brightness(30%);
-        zIndex: -1;">
+        zIndex: -1;
+        background: ${theme.palette.primary.main}">
         <source src="/apirra-background.mp4" type="video/mp4" />
       </video>`,
       }}
