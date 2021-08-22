@@ -39,7 +39,7 @@ const Flagship = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <video autoPlay muted loop className={classes.background}>
+      <video autoplay muted loop className={classes.background}>
         <source src="/apirra-background-compressed.mp4" type="video/mp4" />
       </video>
       <div className={classes.attentionGrabber}>
