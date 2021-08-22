@@ -61,7 +61,7 @@ const Flagship = () => {
   return (
     <div className={classes.container}>
       <div className={classes.background} />
-      <Loader className={classes.loader} /> || <Video />
+      <Loader className={classes.loader} /> || (<Video />
       <div className={classes.attentionGrabber}>
         <div style={{ textAlign: "center" }}>
           <Typography variant="h1">Apirra Living</Typography>
@@ -78,6 +78,7 @@ const Flagship = () => {
           </Button>
         </div>
       </div>
+      )
     </div>
   );
 };
