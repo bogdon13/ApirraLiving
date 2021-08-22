@@ -41,14 +41,21 @@ const Flagship = () => {
     // <video autoPlay playsInline muted loop className={classes.background}>
     //   <source src="/apirra-background.mp4" type="video/mp4" />
     // </video>
+
+    // Works for Daven's iPhone 7
     <div
-      className={classes.background}
       dangerouslySetInnerHTML={{
-        __html: `<video autoplay playsinline muted loop>
+        __html: `<video autoplay playsinline muted loop style="position: fixed;
+        right: 0;
+        bottom: 0;
+        minWidth: 100%;
+        minHeight: 100%;
+        filter: brightness(30%);
+        zIndex: -1;">
         <source src="/apirra-background.mp4" type="video/mp4" />
       </video>`,
       }}
-    />
+    ></div>
   );
   return (
     <div className={classes.container}>
