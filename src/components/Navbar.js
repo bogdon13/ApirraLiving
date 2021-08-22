@@ -12,6 +12,7 @@ import {
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import Link from "next/link";
+import theme from "../scripts/theme";
 
 const navLinks = [
   { title: "Home", path: "/" },
@@ -21,7 +22,7 @@ const navLinks = [
   { title: "Apirra Homes", path: "/apirra-homes" },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
-  { title: "Orarion Group", path: "/orarion" },
+  { title: "Orarion", path: "/orarion" },
 ];
 
 const useStyles = makeStyles({
@@ -46,9 +47,10 @@ const Navbar = () => {
     <>
       <AppBar
         position="sticky"
-        style={{ boxShadow: "none" }}
-        className={classes.appBar}
-        color="transparent"
+        style={{
+          boxShadow: "none",
+          background: { background: `${theme.palette.primary.main}` },
+        }}
       >
         <Toolbar component="nav">
           <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
@@ -65,7 +67,7 @@ const Navbar = () => {
             <Hidden smDown>
               <List
                 component="nav"
-                aria-labelledBy="main navigation"
+                aria-labelledby="main navigation"
                 className={classes.navDisplayFlex}
               >
                 {navLinks.map(({ title, path }) => (
@@ -86,5 +88,4 @@ const Navbar = () => {
     </>
   );
 };
-
 export default Navbar;
