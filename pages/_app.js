@@ -20,6 +20,7 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>Apirra Living</title>
+        <link rel="shortcut icon" href="/favicon-16x16.png" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
