@@ -5,16 +5,20 @@ import { red } from "@material-ui/core/colors";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#071928",
+      main: "#0F1827",
+      hover: "#182740",
     },
     secondary: {
-      main: "#77ACA2",
+      main: "#3A5E99",
     },
     orarion: {
       main: "#D6B53B",
     },
     error: {
       main: red.A400,
+    },
+    standard: {
+      main: "#FFF",
     },
   },
 });

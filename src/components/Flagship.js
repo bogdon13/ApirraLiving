@@ -24,6 +24,14 @@ const useStyles = makeStyles({
     left: "50%",
     transform: "translate(-50%, -50%)",
   },
+  contactButton: {
+    border: "none",
+    "&:hover": {
+      border: "none",
+      backgroundColor: `${theme.palette.standard.main}`,
+      color: `${theme.palette.primary.main}`,
+    },
+  },
 });
 
 const Flagship = () => {
@@ -40,13 +48,12 @@ const Flagship = () => {
             Buy better. Build better. Be better.
           </Typography>
           <Button
-            variant="contained"
+            variant="outlined"
             size="large"
-            disableElevation
             className={classes.contactButton}
-            color="secondary"
+            color="standard"
           >
-            Learn More
+            Click to Learn More
           </Button>
         </div>
       </div>

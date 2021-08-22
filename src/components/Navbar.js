@@ -9,7 +9,7 @@ import {
   Hidden,
   Fab,
 } from "@material-ui/core";
-import { KeyboardArrowUp } from "@material-ui/icons";
+import { KeyboardArrowUp, KeyboardArrowDown } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,10 +20,12 @@ import BackToTop from "./BackToTop";
 
 const navLinks = [
   { title: "Home", path: "/" },
-  { title: "Furniture", path: "/furniture" },
-  { title: "Building Supplies", path: "/building-supplies" },
-  { title: "Local Contracting", path: "/local-contracting" },
-  { title: "Apirra Homes", path: "/apirra-homes" },
+  //   { title: "Furniture", path: "/furniture" },
+  //   { title: "Building Supplies", path: "/building-supplies" },
+  //   { title: "Local Contracting", path: "/local-contracting" },
+  //   { title: "Apirra Homes", path: "/apirra-homes" },
+  { title: "Products", path: "/about" },
+  { title: "Services", path: "/about" },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
   { title: "ORARION", path: "/orarion" },
@@ -43,6 +45,13 @@ const useStyles = makeStyles({
     color: "#f1f1f1",
     margin: `auto`,
     textAlign: `center`,
+  },
+  itemHover: {
+    borderRadius: "30px",
+    whiteSpace: "nowrap",
+    "&:hover": {
+      backgroundColor: `${theme.palette.primary.hover}`,
+    },
   },
   orarion: {
     margin: `auto`,
@@ -66,13 +75,18 @@ const Navbar = () => {
           position="sticky"
           style={{
             boxShadow: "none",
-            background: { background: `${theme.palette.primary.main}` },
+            background: `${theme.palette.primary.main}`,
           }}
         >
           <Toolbar component="nav">
             <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
               <Link href="/">
-                <IconButton edge="start" color="inherit" aria-label="home">
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="home"
+                  className={classes.itemHover}
+                >
                   <Image
                     src="/logo_no_text.png"
                     alt="apirra logo"
@@ -81,29 +95,45 @@ const Navbar = () => {
                   />
                 </IconButton>
               </Link>
-              <Hidden smDown>
-                <List
-                  component="nav"
-                  aria-labelledby="main navigation"
-                  className={classes.navDisplayFlex}
-                >
-                  {navLinks.map(({ title, path }) => (
-                    <Link href={path} key={title}>
-                      <ListItem button>
-                        <ListItemText
-                          disableTypography
-                          primary={title}
-                          className={isOrarion(title)}
-                        />
-                      </ListItem>
-                    </Link>
-                  ))}
-                </List>
-              </Hidden>
-              <Hidden mdUp>
-                <NavDrawer navLinks={navLinks} />
-              </Hidden>
             </Container>
+            <Hidden mdDown>
+              <List
+                component="nav"
+                aria-labelledby="main navigation"
+                className={classes.navDisplayFlex}
+              >
+                {navLinks.map(({ title, path }) => {
+                  if (title === "Products" || title === "Services")
+                    return (
+                      <Link href={path} key={title}>
+                        <ListItem button className={classes.itemHover}>
+                          <ListItemText
+                            disableTypography
+                            primary={title}
+                            className={isOrarion(title)}
+                          />
+                          <KeyboardArrowDown />
+                        </ListItem>
+                      </Link>
+                    );
+                  else
+                    return (
+                      <Link href={path} key={title}>
+                        <ListItem button className={classes.itemHover}>
+                          <ListItemText
+                            disableTypography
+                            primary={title}
+                            className={isOrarion(title)}
+                          />
+                        </ListItem>
+                      </Link>
+                    );
+                })}
+              </List>
+            </Hidden>
+            <Hidden mdUp>
+              <NavDrawer navLinks={navLinks} />
+            </Hidden>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
