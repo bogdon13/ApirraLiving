@@ -30,7 +30,7 @@ const Flagship = () => {
   return (
     <div className={classes.container}>
       <video autoPlay muted loop className={classes.background}>
-        <source src="/apirra-background.mp4" type="video/mp4" />
+        <source src="/apirra-background-compressed.mp4" type="video/mp4" />
       </video>
       <div className={classes.attentionGrabber}>
         <div style={{ textAlign: "center" }}>
