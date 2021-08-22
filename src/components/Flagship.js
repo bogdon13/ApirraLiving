@@ -33,19 +33,21 @@ const Flagship = () => {
         <source src="/apirra-background-compressed.mp4" type="video/mp4" />
       </video>
       <div className={classes.attentionGrabber}>
-        <Typography variant="h1">Apirra Living</Typography>
-        <Typography paddingTop={2} paddingBottom={3} variant="h5">
-          Buy better. Build better. Be better.
-        </Typography>
-        <Button
-          variant="contained"
-          size="large"
-          disableElevation
-          className={classes.contactButton}
-          color="secondary"
-        >
-          Learn More
-        </Button>
+        <div style={{ textAlign: "center" }}>
+          <Typography variant="h1">Apirra Living</Typography>
+          <Typography paddingTop={2} paddingBottom={3} variant="h5">
+            Buy better. Build better. Be better.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            disableElevation
+            className={classes.contactButton}
+            color="secondary"
+          >
+            Learn More
+          </Button>
+        </div>
       </div>
     </div>
   );
