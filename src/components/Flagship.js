@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     minHeight: "100%",
     filter: "brightness(30%)",
     zIndex: -1,
-    background: `${theme.palette.primary.main}`,
+    background: `#000`,
   },
   container: {
     position: "relative",
@@ -51,8 +51,7 @@ const Flagship = () => {
         minWidth: 100%;
         minHeight: 100%;
         filter: brightness(30%);
-        zIndex: -1;
-        background: ${theme.palette.primary.main}">
+        zIndex: -1;">
         <source src="/apirra-background.mp4" type="video/mp4" />
       </video>`,
       }}
@@ -60,6 +59,7 @@ const Flagship = () => {
   );
   return (
     <div className={classes.container}>
+      <div className={classes.background} />
       <Video />
       <div className={classes.attentionGrabber}>
         <div style={{ textAlign: "center" }}>
