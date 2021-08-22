@@ -12,6 +12,7 @@
         "@material-ui/styles": "^5.0.0-beta.4",
         "clsx": "latest",
         "next": "latest",
+        "nextjs-progressbar": "0.0.11",
         "prop-types": "latest",
         "react": "latest",
         "react-dom": "latest"

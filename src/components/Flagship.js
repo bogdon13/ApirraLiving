@@ -84,7 +84,7 @@ const Flagship = () => {
   return (
     <div className={classes.container}>
       <div className={classes.background} />
-      <Loader className={classes.loader} />
+      {/* <Loader className={classes.loader} /> */}
       <AttentionGrabber />
     </div>
   );

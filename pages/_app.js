@@ -4,6 +4,7 @@ import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/scripts/theme";
+import NextNprogress from "nextjs-progressbar";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -31,6 +32,7 @@ export default function MyApp(props) {
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
+      <NextNprogress height={5} color={theme.palette.secondary.main} />
     </React.Fragment>
   );
 }
