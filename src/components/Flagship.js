@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import theme from "../scripts/theme";
 
 const useStyles = makeStyles({
   background: {
@@ -31,24 +32,20 @@ const Flagship = () => {
       <video autoPlay muted loop className={classes.background}>
         <source src="/apirra-background-compressed.mp4" type="video/mp4" />
       </video>
-      {/* <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: "100vh" }}
-      >
-        <Grid item>
-          <div className={classes.attentionGrabber}>
-            <Typography variant="h1">Apirra Living</Typography>
-            <Typography>Buy better. Build better. Be better.</Typography>
-          </div>
-        </Grid>
-      </Grid> */}
       <div className={classes.attentionGrabber}>
         <Typography variant="h1">Apirra Living</Typography>
-        <Typography>Buy better. Build better. Be better.</Typography>
+        <Typography paddingTop={2} paddingBottom={3} variant="h5">
+          Buy better. Build better. Be better.
+        </Typography>
+        <Button
+          variant="contained"
+          size="large"
+          disableElevation
+          className={classes.contactButton}
+          color="secondary"
+        >
+          Learn More
+        </Button>
       </div>
     </div>
   );

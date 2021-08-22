@@ -9,11 +9,14 @@ import {
   Hidden,
   Fab,
 } from "@material-ui/core";
+import { KeyboardArrowUp } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import Link from "next/link";
 import theme from "../scripts/theme";
-import HideOnScroll from "../components/HideOnScroll";
+import HideOnScroll from "./HideOnScroll";
+import NavDrawer from "./NavDrawer";
+import BackToTop from "./BackToTop";
 
 const navLinks = [
   { title: "Home", path: "/" },
@@ -42,7 +45,7 @@ const useStyles = makeStyles({
   },
   orarion: {
     margin: `auto`,
-    color: `${theme.palette.secondary.main}`,
+    color: `${theme.palette.orarion.main}`,
     fontFamily: "Book Antigua, serif",
     textAlign: `center`,
     fontSize: `large`,
@@ -100,10 +103,19 @@ const Navbar = () => {
                   </Link>
                 </List>
               </Hidden>
+              <Hidden mdUp>
+                <NavDrawer navLinks={navLinks} />
+              </Hidden>
             </Container>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
+      <Toolbar id="back-to-top-anchor" />
+      <BackToTop>
+        <Fab color="secondary" size="large" aria-label="scroll back to top">
+          <KeyboardArrowUp />
+        </Fab>
+      </BackToTop>
     </>
   );
 };

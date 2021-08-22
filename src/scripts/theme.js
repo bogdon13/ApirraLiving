@@ -8,6 +8,9 @@ const theme = createTheme({
       main: "#071928",
     },
     secondary: {
+      main: "#77ACA2",
+    },
+    orarion: {
       main: "#D6B53B",
     },
     error: {
