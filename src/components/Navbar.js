@@ -1,3 +1,4 @@
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -8,6 +9,8 @@ import {
   IconButton,
   Hidden,
   Fab,
+  Menu,
+  MenuItem,
 } from "@material-ui/core";
 import { KeyboardArrowUp, KeyboardArrowDown } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/styles";
@@ -24,8 +27,9 @@ const navLinks = [
   //   { title: "Building Supplies", path: "/building-supplies" },
   //   { title: "Local Contracting", path: "/local-contracting" },
   //   { title: "Apirra Homes", path: "/apirra-homes" },
+  //   { title: "3D Rendering", path: "/3d-rendering" },
   { title: "Products", path: "/about" },
-  { title: "Services", path: "/about" },
+  //   { title: "Services", path: "/about" },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
   { title: "ORARION", path: "/orarion" },
@@ -63,11 +67,21 @@ const useStyles = makeStyles({
 });
 
 const Navbar = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const classes = useStyles();
   const isOrarion = (link) => {
     if (link === "ORARION") return classes.orarion;
     else return classes.linkText;
   };
+
   return (
     <>
       <HideOnScroll>
@@ -105,8 +119,25 @@ const Navbar = () => {
                 {navLinks.map(({ title, path }) => {
                   if (title === "Products" || title === "Services")
                     return (
-                      <Link href={path} key={title}>
-                        <ListItem button className={classes.itemHover}>
+                      <div key={title}>
+                        <Menu
+                          id="simple-menu"
+                          anchorEl={anchorEl}
+                          keepMounted
+                          open={Boolean(anchorEl)}
+                          onClose={handleClose}
+                          onClick={handleClose}
+                        >
+                          <MenuItem onClick={handleClose}>Furniture</MenuItem>
+                          <MenuItem onClick={handleClose}>
+                            Building Supplies
+                          </MenuItem>
+                        </Menu>
+                        <ListItem
+                          button
+                          className={classes.itemHover}
+                          onClick={handleClick}
+                        >
                           <ListItemText
                             disableTypography
                             primary={title}
@@ -114,7 +145,7 @@ const Navbar = () => {
                           />
                           <KeyboardArrowDown />
                         </ListItem>
-                      </Link>
+                      </div>
                     );
                   else
                     return (
