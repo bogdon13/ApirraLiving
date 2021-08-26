@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Typography, Button } from "@material-ui/core";
+import { Typography, Button, Grow } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import theme from "../scripts/theme";
 import Link from "next/link";
@@ -63,22 +63,33 @@ const Flagship = () => {
       <>
         <Video />
         <div className={classes.attentionGrabber}>
-          <div style={{ textAlign: "center" }}>
-            <Typography variant="h1">Apirra Living</Typography>
-            <Typography paddingTop={2} paddingBottom={3} variant="h3">
-              Buy better. Build better. Be better.
-            </Typography>
-            <Link href="/about">
-              <Button
-                variant="outlined"
-                size="large"
-                className={classes.contactButton}
-                color="standard"
+          <Grow
+            in={true}
+            style={{ transformOrigin: "0 0 0" }}
+            {...{ timeout: 2000 }}
+          >
+            <div style={{ textAlign: "center" }}>
+              <Typography variant="h1">Apirra Living</Typography>
+              <Typography
+                style={{ whiteSpace: "nowrap" }}
+                paddingTop={2}
+                paddingBottom={3}
+                variant="h3"
               >
-                Click to Learn More
-              </Button>
-            </Link>
-          </div>
+                Buy better. Build better. Be better.
+              </Typography>
+              <Link href="/about">
+                <Button
+                  variant="outlined"
+                  size="large"
+                  className={classes.contactButton}
+                  color="standard"
+                >
+                  Learn More
+                </Button>
+              </Link>
+            </div>
+          </Grow>
         </div>
       </>
     );

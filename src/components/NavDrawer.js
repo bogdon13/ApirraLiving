@@ -88,7 +88,7 @@ const NavDrawer = ({ navLinks }) => {
     >
       <List component="nav">
         {navLinks.map(({ title, path }) => {
-          if (title === "Products") {
+          if (title === "Products")
             return (
               <div key={title}>
                 <ListItem
@@ -146,21 +146,80 @@ const NavDrawer = ({ navLinks }) => {
                     </ListItem>
                   </List>
                 </Collapse>
-                {/* <ListItem
-                  button
-                  className={classes.itemHover}
-                  // onClick={handleClick1}
-                >
-                  <ListItemText
-                    disableTypography
-                    primary={title}
-                    className={isOrarion(title)}
-                  />
-                </ListItem> */}
               </div>
             );
-          } else if (title === "Services") {
-          } else
+          else if (title === "Services") {
+          }
+          //  else if (title === "Services")
+          //   return (
+          //     <div key={title}>
+          //       <ListItem
+          //         button
+          //         className={classes.itemHover}
+          //         onClick={handleClick}
+          //       >
+          //         {open ? (
+          //           <ExpandLessIcon fontSize="large" style={{ opacity: 0 }} />
+          //         ) : (
+          //           <ExpandMoreIcon fontSize="large" style={{ opacity: 0 }} />
+          //         )}
+          //         <ListItemText
+          //           disableTypography
+          //           primary={title}
+          //           className={isOrarion(title)}
+          //         />
+          //         {open ? (
+          //           <ExpandLessIcon
+          //             fontSize="large"
+          //             style={{ color: `white` }}
+          //           />
+          //         ) : (
+          //           <ExpandMoreIcon
+          //             fontSize="large"
+          //             style={{ color: `white` }}
+          //           />
+          //         )}
+          //       </ListItem>
+
+          //       <Collapse in={open} timeout="auto" unmountOnExit>
+          //         <Divider />
+          //         <List
+          //           className={classes.subList}
+          //           component="div"
+          //           disablePadding
+          //         >
+          //           <ListItem button>
+          //             <Link href={path[0].path}>
+          //               <ListItemText
+          //                 className={isOrarion(title)}
+          //                 inset
+          //                 primary={path[0].title}
+          //               />
+          //             </Link>
+          //           </ListItem>
+          //           <ListItem button>
+          //             <Link href={path[1].path}>
+          //               <ListItemText
+          //                 className={isOrarion(title)}
+          //                 inset
+          //                 primary={path[1].title}
+          //               />
+          //             </Link>
+          //           </ListItem>
+          //           <ListItem button>
+          //             <Link href={path[2].path}>
+          //               <ListItemText
+          //                 className={isOrarion(title)}
+          //                 inset
+          //                 primary={path[2].title}
+          //               />
+          //             </Link>
+          //           </ListItem>
+          //         </List>
+          //       </Collapse>
+          //     </div>
+          //   );
+          else
             return (
               <Link href={path} key={title}>
                 <ListItem button className={classes.itemHover}>
