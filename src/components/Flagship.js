@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import theme from "../scripts/theme";
-import Loader from "./Loader";
+import Link from "next/link";
 
 const useStyles = makeStyles({
   background: {
@@ -68,14 +68,16 @@ const Flagship = () => {
             <Typography paddingTop={2} paddingBottom={3} variant="h3">
               Buy better. Build better. Be better.
             </Typography>
-            <Button
-              variant="outlined"
-              size="large"
-              className={classes.contactButton}
-              color="standard"
-            >
-              Click to Learn More
-            </Button>
+            <Link href="/about">
+              <Button
+                variant="outlined"
+                size="large"
+                className={classes.contactButton}
+                color="standard"
+              >
+                Click to Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </>
