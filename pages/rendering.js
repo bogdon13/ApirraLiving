@@ -7,6 +7,7 @@ import ProTip from "../src/ProTip";
 import Link from "../src/Link";
 import Copyright from "../src/Copyright";
 import Navbar from "../src/components/Navbar";
+import Footer from "../src/components/Footer";
 
 export default function Rendering() {
   return (
@@ -21,6 +22,10 @@ export default function Rendering() {
           <Copyright />
         </Box>
       </Container>
+      <Footer
+        title="Footer"
+        description="Something here to give the footer a purpose!"
+      />
     </>
   );
 }
