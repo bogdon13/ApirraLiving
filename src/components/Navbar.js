@@ -28,8 +28,21 @@ const navLinks = [
   //   { title: "Local Contracting", path: "/local-contracting" },
   //   { title: "Apirra Homes", path: "/apirra-homes" },
   //   { title: "3D Rendering", path: "/3d-rendering" },
-  { title: "Products", path: "/about" },
-  //   { title: "Services", path: "/about" },
+  {
+    title: "Products",
+    path: [
+      { title: "Furniture", path: "/furniture" },
+      { title: "Building Supplies", path: "/building-supplies" },
+    ],
+  },
+  {
+    title: "Services",
+    path: [
+      { title: "Apirra Homes", path: "/apirra-homes" },
+      { title: "Local Contracting", path: "/local-contracting" },
+      { title: "3D Rendering", path: "/3d-rendering" },
+    ],
+  },
   { title: "About Us", path: "/about" },
   { title: "Contact Us", path: "/contact" },
   { title: "ORARION", path: "/orarion" },
@@ -67,14 +80,20 @@ const useStyles = makeStyles({
 });
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl1, setAnchorEl1] = React.useState(null);
+  const [anchorEl2, setAnchorEl2] = React.useState(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick1 = (event) => {
+    setAnchorEl1(event.currentTarget);
   };
-
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClick2 = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
+  const handleClose1 = () => {
+    setAnchorEl1(null);
+  };
+  const handleClose2 = () => {
+    setAnchorEl2(null);
   };
   const classes = useStyles();
   const isOrarion = (link) => {
@@ -117,26 +136,63 @@ const Navbar = () => {
                 className={classes.navDisplayFlex}
               >
                 {navLinks.map(({ title, path }) => {
-                  if (title === "Products" || title === "Services")
+                  if (title === "Products")
                     return (
                       <div key={title}>
                         <Menu
-                          id="simple-menu"
-                          anchorEl={anchorEl}
+                          id="simple-menu1"
+                          anchorEl={anchorEl1}
                           keepMounted
-                          open={Boolean(anchorEl)}
-                          onClose={handleClose}
-                          onClick={handleClose}
+                          open={Boolean(anchorEl1)}
+                          onClose={handleClose1}
+                          onClick={handleClose1}
                         >
-                          <MenuItem onClick={handleClose}>Furniture</MenuItem>
-                          <MenuItem onClick={handleClose}>
-                            Building Supplies
-                          </MenuItem>
+                          <Link href={path[0].path}>
+                            <MenuItem>{path[0].title}</MenuItem>
+                          </Link>
+                          <Link href={path[1].path}>
+                            <MenuItem>{path[1].title}</MenuItem>
+                          </Link>
                         </Menu>
                         <ListItem
                           button
                           className={classes.itemHover}
-                          onClick={handleClick}
+                          onClick={handleClick1}
+                        >
+                          <ListItemText
+                            disableTypography
+                            primary={title}
+                            className={isOrarion(title)}
+                          />
+                          <KeyboardArrowDown />
+                        </ListItem>
+                      </div>
+                    );
+                  if (title === "Services")
+                    return (
+                      <div key={title}>
+                        <Menu
+                          id="simple-menu2"
+                          anchorEl={anchorEl2}
+                          keepMounted
+                          open={Boolean(anchorEl2)}
+                          onClose={handleClose2}
+                          onClick={handleClose2}
+                        >
+                          <Link href={path[0].path}>
+                            <MenuItem>{path[0].title}</MenuItem>
+                          </Link>
+                          <Link href={path[1].path}>
+                            <MenuItem>{path[1].title}</MenuItem>
+                          </Link>
+                          <Link href={path[2].path}>
+                            <MenuItem>{path[2].title}</MenuItem>
+                          </Link>
+                        </Menu>
+                        <ListItem
+                          button
+                          className={classes.itemHover}
+                          onClick={handleClick2}
                         >
                           <ListItemText
                             disableTypography
