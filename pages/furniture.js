@@ -6,17 +6,21 @@ import Button from "@material-ui/core/Button";
 import ProTip from "../src/ProTip";
 import Link from "../src/Link";
 import Copyright from "../src/Copyright";
+import Navbar from "../src/components/Navbar";
 
 export default function About() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Furniture
-        </Typography>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+    <>
+      <Navbar />
+      <Container maxWidth="sm">
+        <Box sx={{ my: 4 }}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Furniture
+          </Typography>
+          <ProTip />
+          <Copyright />
+        </Box>
+      </Container>
+    </>
   );
 }

@@ -31,6 +31,7 @@ const NavDrawer = ({ navLinks }) => {
     subList: {
       backgroundColor: `${theme.palette.primary.hover}`,
     },
+    nav: {},
     linkText: {
       textDecoration: `none`,
       color: "#f1f1f1",
@@ -86,7 +87,7 @@ const NavDrawer = ({ navLinks }) => {
       // onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List component="nav">
+      <List component="nav" className={classes.nav}>
         {navLinks.map(({ title, path }) => {
           if (title === "Products")
             return (

@@ -37,7 +37,7 @@ const navLinks = [
     path: [
       { title: "Apirra Homes", path: "/apirra-homes" },
       { title: "Local Contracting", path: "/local-contracting" },
-      { title: "3D Rendering", path: "/3d-rendering" },
+      { title: "3D Rendering", path: "/rendering" },
     ],
   },
   { title: "About Us", path: "/about" },
