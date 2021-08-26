@@ -7,12 +7,12 @@ import ProTip from "../src/ProTip";
 import Link from "../src/Link";
 import Copyright from "../src/Copyright";
 
-export default function About() {
+export default function Rendering() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Furniture
+          3D Rendering
         </Typography>
         <ProTip />
         <Copyright />
