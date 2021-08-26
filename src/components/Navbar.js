@@ -13,6 +13,8 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import { KeyboardArrowUp, KeyboardArrowDown } from "@material-ui/icons";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,11 +25,6 @@ import BackToTop from "./BackToTop";
 
 const navLinks = [
   { title: "Home", path: "/" },
-  //   { title: "Furniture", path: "/furniture" },
-  //   { title: "Building Supplies", path: "/building-supplies" },
-  //   { title: "Local Contracting", path: "/local-contracting" },
-  //   { title: "Apirra Homes", path: "/apirra-homes" },
-  //   { title: "3D Rendering", path: "/3d-rendering" },
   {
     title: "Products",
     path: [
@@ -82,17 +79,23 @@ const useStyles = makeStyles({
 const Navbar = () => {
   const [anchorEl1, setAnchorEl1] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
+  const [openProducts, setopenProducts] = React.useState(false);
+  const [openServices, setopenServices] = React.useState(false);
 
   const handleClick1 = (event) => {
+    setopenProducts(true);
     setAnchorEl1(event.currentTarget);
   };
   const handleClick2 = (event) => {
+    setopenServices(true);
     setAnchorEl2(event.currentTarget);
   };
   const handleClose1 = () => {
+    setopenProducts(false);
     setAnchorEl1(null);
   };
   const handleClose2 = () => {
+    setopenServices(false);
     setAnchorEl2(null);
   };
   const classes = useStyles();
@@ -164,7 +167,11 @@ const Navbar = () => {
                             primary={title}
                             className={isOrarion(title)}
                           />
-                          <KeyboardArrowDown />
+                          {openProducts ? (
+                            <ExpandLessIcon />
+                          ) : (
+                            <ExpandMoreIcon />
+                          )}
                         </ListItem>
                       </div>
                     );
@@ -199,7 +206,11 @@ const Navbar = () => {
                             primary={title}
                             className={isOrarion(title)}
                           />
-                          <KeyboardArrowDown />
+                          {openServices ? (
+                            <ExpandLessIcon />
+                          ) : (
+                            <ExpandMoreIcon />
+                          )}
                         </ListItem>
                       </div>
                     );
