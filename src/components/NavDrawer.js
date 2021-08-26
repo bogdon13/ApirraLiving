@@ -41,9 +41,9 @@ const NavDrawer = ({ navLinks }) => {
     },
     itemHover: {
       whiteSpace: "nowrap",
-      "&:hover": {
-        backgroundColor: `${theme.palette.primary.hover}`,
-      },
+      // "&:hover": {
+      //   backgroundColor: `${theme.palette.primary.hover}`,
+      // },
     },
     orarion: {
       margin: `auto`,
