@@ -19,6 +19,7 @@ import SuppliesAlbum from "../../src/components/SuppliesAlbum";
 import ToSupplies from "../../src/components/ToSupplies";
 import lumberImage from "../../public/lumber.jpg";
 import Head from "next/head";
+import theme from "../../src/scripts/theme";
 
 const useStyles = makeStyles({
   imageContainer: {
@@ -32,7 +33,12 @@ const useStyles = makeStyles({
       width: "60vw",
     },
   },
-  downButton: { width: 70, height: 70, borderRadius: "30px" },
+  downButton: {
+    width: 70,
+    height: 70,
+    borderRadius: "30px",
+    color: `${theme.palette.secondary.main}`,
+  },
   anchor: {
     display: "hidden",
   },
@@ -45,8 +51,8 @@ export default function BuildingSupplies() {
     if (matches) {
       return (
         <>
-          <SuppliesAlbum />
           <div id="supplies-album" className={classes.anchor} />
+          <SuppliesAlbum />
         </>
       );
     } else {

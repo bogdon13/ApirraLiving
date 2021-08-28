@@ -3,6 +3,7 @@ import Box from "@material-ui/core/Box";
 import CardMedia from "@material-ui/core/CardMedia";
 import { makeStyles } from "@material-ui/styles";
 import Link from "next/link";
+import theme from "../scripts/theme";
 
 const styles = () => ({
   root: ({ bgColor = "rgba(0, 0, 0, 0.08)", bgPosition = "center" }) => ({
@@ -21,14 +22,17 @@ const CoverCard = (props) => {
   return (
     <Box position={"relative"} width={"25rem"} height={"100%"} p={6}>
       <a href={props.link}>
+        <Box position={"relative"} style={{ textAlign: "center" }}>
+          <h3 style={{ color: `${theme.palette.secondary.main}` }}>
+            {props.title}
+          </h3>
+        </Box>
+
         <CardMedia
           component={"img"} // add this line to use <img />
           image={props.img}
         />
       </a>
-      <Box position={"relative"}>
-        <h3>{props.title}</h3>
-      </Box>
     </Box>
   );
 };

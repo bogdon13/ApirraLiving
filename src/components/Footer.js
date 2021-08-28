@@ -4,8 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import theme from "../scripts/theme";
+
+const useStyles = makeStyles({
+  itemHover: {
+    borderRadius: "30px",
+    textAlign: "center",
+    "&:hover": {
+      backgroundColor: `${theme.palette.primary.hover}`,
+    },
+  },
+});
 
 const Footer = () => {
+  const classes = useStyles();
   return (
     <MDBFooter
       style={{ backgroundColor: "#131726", position: "relative" }}
@@ -18,7 +30,13 @@ const Footer = () => {
               Company name
             </h6> */}
             <Link href="/">
-              <IconButton edge="start" color="inherit" aria-label="home">
+              <IconButton
+                className={classes.itemHover}
+                edge="start"
+                color="inherit"
+                aria-label="home"
+                styles={{ marginBottom: "10px" }}
+              >
                 <Image
                   src="/logo.png"
                   alt="apirra logo"
@@ -47,30 +65,34 @@ const Footer = () => {
           </MDBCol>
           <hr className="w-100 clearfix d-md-none" />
           <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
-            <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
-            <p>
+            <h6 className="text-uppercase mb-4 font-weight-bold text-center">
+              Products
+            </h6>
+            <p className={classes.itemHover}>
               <Link href="/building-supplies">Building Supplies</Link>
             </p>
-            <p>
+            <p className={classes.itemHover}>
               <Link href="/furniture">Furniture</Link>
             </p>
-            <p>
+            <p className={classes.itemHover}>
               <Link href="/Flooring">Flooring</Link>
             </p>
-            <p>
+            <p className={classes.itemHover}>
               <Link href="/lighting">Lighting</Link>
             </p>
           </MDBCol>
           <hr className="w-100 clearfix d-md-none" />
           <MDBCol md="3" lg="2" xl="2" className="mx-auto mt-3">
-            <h6 className="text-uppercase mb-4 font-weight-bold">Services</h6>
-            <p>
+            <h6 className="text-uppercase mb-4 font-weight-bold text-center">
+              Services
+            </h6>
+            <p className={classes.itemHover}>
               <Link href="/apirra-homes">Apirra Homes</Link>
             </p>
-            <p>
+            <p className={classes.itemHover}>
               <Link href="/rendering">3D Rendering</Link>
             </p>
-            <p>
+            <p className={classes.itemHover}>
               <Link href="/local-contracting">Local Contracting</Link>
             </p>
           </MDBCol>
