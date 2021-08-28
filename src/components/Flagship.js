@@ -33,6 +33,10 @@ const useStyles = makeStyles({
       backgroundColor: `${theme.palette.standard.main}`,
       color: `${theme.palette.primary.main}`,
     },
+    "@media (max-width:800px)": {
+      color: `${theme.palette.primary.main}`,
+      backgroundColor: `${theme.palette.standard.main}`,
+    },
   },
 });
 
