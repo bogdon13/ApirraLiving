@@ -34,7 +34,6 @@ const NavDrawer = ({ navLinks }) => {
       backgroundColor: `${theme.palette.primary.hover}`,
     },
     nav: {
-      marginTop: "15%",
       maxHeight: "100%",
       overflow: "hidden",
     },
