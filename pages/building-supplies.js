@@ -41,13 +41,12 @@ export default function BuildingSupplies() {
           direction="column"
           alignItems="center"
           justify="center"
-          style={{ width: "100vw" }}
         >
-          <Grid item>
+          <Grid item xs={3}>
             <div style={{ textAlign: "center" }}>
               <Typography
                 variant="h1"
-                style={{ fontWeight: 500, margin: "2rem" }}
+                style={{ fontWeight: 500, marginTop: "2rem" }}
               >
                 Building Supplies
               </Typography>
