@@ -4,13 +4,14 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import ProTip from "../src/ProTip";
-import Link from "../src/Link";
 import Copyright from "../src/Copyright";
 import Navbar from "../src/components/Navbar";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import lumberImage from "../public/iStock-920495528.jpg";
+import { KeyboardArrowDown } from "@material-ui/icons";
+import ImageList from "@material-ui/core/ImageList";
+import ImageListItem from "@material-ui/core/ImageListItem";
 
 const useStyles = makeStyles({
   imageContainer: {
@@ -23,6 +24,11 @@ const useStyles = makeStyles({
     "@media (min-width:600px)": {
       width: "60vw",
     },
+  },
+  downButton: { width: 70, height: 70, borderRadius: "30px" },
+  imageList: {
+    width: 500,
+    height: 450,
   },
 });
 
@@ -69,6 +75,12 @@ export default function BuildingSupplies() {
               </Typography>
             </div>
           </Grid>
+          <Button size="large" className={classes.downButton}>
+            <KeyboardArrowDown
+              fontSize="large"
+              className={classes.downButton}
+            />
+          </Button>
         </Grid>
       </div>
     </>
