@@ -35,6 +35,8 @@ const NavDrawer = ({ navLinks }) => {
     },
     nav: {
       marginTop: "15%",
+      maxHeight: "100%",
+      overflow: "hidden",
     },
     linkText: {
       textDecoration: `none`,
