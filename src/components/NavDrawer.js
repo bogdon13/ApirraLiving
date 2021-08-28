@@ -32,11 +32,7 @@ const NavDrawer = ({ navLinks }) => {
       backgroundColor: `${theme.palette.primary.hover}`,
     },
     nav: {
-      position: "fixed",
-      top: "40%",
-      left: "50%",
-      transform: "translate(-40%, -50%)",
-      WebkitTransform: "translate(-40%, -50%)",
+      marginTop: "25%",
     },
     linkText: {
       textDecoration: `none`,
