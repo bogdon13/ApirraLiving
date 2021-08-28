@@ -67,13 +67,15 @@ const NavDrawer = ({ navLinks }) => {
   const classes = useStyles();
 
   const handleClickProducts = () => {
-    if (!openProducts) {
+    if (openServices) {
+      setOpenServices(false);
     }
     setOpenProducts(!openProducts);
   };
 
   const handleClickServices = () => {
-    if (!openServices) {
+    if (openProducts) {
+      setOpenProducts(false);
     }
     setOpenServices(!openServices);
   };
