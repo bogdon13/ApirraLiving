@@ -81,11 +81,10 @@ const Flagship = () => {
               <Link href="/about">
                 <Button
                   variant="outlined"
-                  size="large"
                   className={classes.contactButton}
                   color="standard"
                 >
-                  Learn More
+                  <Typography variant="h4">Learn More</Typography>
                 </Button>
               </Link>
             </div>

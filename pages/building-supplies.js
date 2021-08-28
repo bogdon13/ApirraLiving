@@ -18,7 +18,12 @@ const useStyles = makeStyles({
     width: "100%",
     height: "30vh",
   },
-  body: { margin: "auto" },
+  body: {
+    margin: "auto",
+    "@media (min-width:600px)": {
+      width: "60vw",
+    },
+  },
 });
 
 export default function BuildingSupplies() {
@@ -26,15 +31,16 @@ export default function BuildingSupplies() {
   return (
     <>
       <Navbar />
-      <div className={classes.body}>
-        <div className={classes.imageContainer}>
-          <Image
-            placeholder="blur"
-            src={lumberImage}
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
+
+      <div className={classes.imageContainer}>
+        <Image
+          placeholder="blur"
+          src={lumberImage}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div>
         <Grid
           container
           spacing={0}
@@ -44,11 +50,22 @@ export default function BuildingSupplies() {
         >
           <Grid item xs={3}>
             <div style={{ textAlign: "center" }}>
-              <Typography
-                variant="h1"
-                style={{ fontWeight: 500, marginTop: "2rem" }}
-              >
+              <Typography variant="h1" style={{ marginTop: "2rem" }}>
                 Building Supplies
+              </Typography>
+              <Typography
+                className={classes.body}
+                variant="h4"
+                style={{
+                  marginTop: "2rem",
+                  marginBottom: "2rem",
+                  paddingRight: "1rem",
+                  paddingLeft: "1rem",
+                }}
+              >
+                No matter the build plan, we carry the supplies needed for every
+                trade. If we don't stock it, we will source every material you
+                need for your next big project. Contact us to find out more!
               </Typography>
             </div>
           </Grid>
