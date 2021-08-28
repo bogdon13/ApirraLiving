@@ -7,7 +7,7 @@ import Link from "@material-ui/core/Link";
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" color="textSecondary" align="left">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
@@ -23,11 +23,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     // marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
-    position: "fixed",
-    left: 0,
+    position: "absolute",
     bottom: 0,
     width: "100%",
-    textAlign: "center",
+    textAlign: "left",
   },
 }));
 
@@ -38,12 +37,12 @@ export default function Footer(props) {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
+        <Typography variant="h6" align="left" gutterBottom>
           {title}
         </Typography>
         <Typography
           variant="subtitle1"
-          align="center"
+          align="left"
           color="textSecondary"
           component="p"
         >

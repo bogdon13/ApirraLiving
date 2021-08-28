@@ -74,6 +74,9 @@ const useStyles = makeStyles({
     textAlign: `center`,
     fontSize: `large`,
   },
+  anchor: {
+    display: "hidden",
+  },
 });
 
 const Navbar = () => {
@@ -106,136 +109,128 @@ const Navbar = () => {
 
   return (
     <>
-      <HideOnScroll>
-        <AppBar
-          position="sticky"
-          style={{
-            boxShadow: "none",
-            background: `${theme.palette.primary.main}`,
-          }}
-        >
-          <Toolbar component="nav">
-            <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
-              <Link href="/">
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  aria-label="home"
-                  className={classes.itemHover}
-                >
-                  <Image
-                    src="/logo_no_text.png"
-                    alt="apirra logo"
-                    width={100}
-                    height={100}
-                  />
-                </IconButton>
-              </Link>
-            </Container>
-            <Hidden mdDown>
-              <List
-                component="nav"
-                aria-labelledby="main navigation"
-                className={classes.navDisplayFlex}
+      {/* <HideOnScroll> */}
+      <AppBar
+        position="sticky"
+        style={{
+          boxShadow: "none",
+          background: `${theme.palette.primary.main}`,
+        }}
+      >
+        <Toolbar component="nav">
+          <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
+            <Link href="/">
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="home"
+                className={classes.itemHover}
               >
-                {navLinks.map(({ title, path }) => {
-                  if (title === "Products")
-                    return (
-                      <div key={title}>
-                        <Menu
-                          id="simple-menu1"
-                          anchorEl={anchorEl1}
-                          keepMounted
-                          open={Boolean(anchorEl1)}
-                          onClose={handleClose1}
-                          onClick={handleClose1}
-                        >
-                          <Link href={path[0].path}>
-                            <MenuItem>{path[0].title}</MenuItem>
-                          </Link>
-                          <Link href={path[1].path}>
-                            <MenuItem>{path[1].title}</MenuItem>
-                          </Link>
-                        </Menu>
-                        <ListItem
-                          button
-                          className={classes.itemHover}
-                          onClick={handleClick1}
-                        >
-                          <ListItemText
-                            disableTypography
-                            primary={title}
-                            className={isOrarion(title)}
-                          />
-                          {openProducts ? (
-                            <ExpandLessIcon />
-                          ) : (
-                            <ExpandMoreIcon />
-                          )}
-                        </ListItem>
-                      </div>
-                    );
-                  if (title === "Services")
-                    return (
-                      <div key={title}>
-                        <Menu
-                          id="simple-menu2"
-                          anchorEl={anchorEl2}
-                          keepMounted
-                          open={Boolean(anchorEl2)}
-                          onClose={handleClose2}
-                          onClick={handleClose2}
-                        >
-                          <Link href={path[0].path}>
-                            <MenuItem>{path[0].title}</MenuItem>
-                          </Link>
-                          <Link href={path[1].path}>
-                            <MenuItem>{path[1].title}</MenuItem>
-                          </Link>
-                          <Link href={path[2].path}>
-                            <MenuItem>{path[2].title}</MenuItem>
-                          </Link>
-                        </Menu>
-                        <ListItem
-                          button
-                          className={classes.itemHover}
-                          onClick={handleClick2}
-                        >
-                          <ListItemText
-                            disableTypography
-                            primary={title}
-                            className={isOrarion(title)}
-                          />
-                          {openServices ? (
-                            <ExpandLessIcon />
-                          ) : (
-                            <ExpandMoreIcon />
-                          )}
-                        </ListItem>
-                      </div>
-                    );
-                  else
-                    return (
-                      <Link href={path} key={title}>
-                        <ListItem button className={classes.itemHover}>
-                          <ListItemText
-                            disableTypography
-                            primary={title}
-                            className={isOrarion(title)}
-                          />
-                        </ListItem>
-                      </Link>
-                    );
-                })}
-              </List>
-            </Hidden>
-            <Hidden mdUp>
-              <NavDrawer navLinks={navLinks} />
-            </Hidden>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-      <Toolbar id="back-to-top-anchor" />
+                <Image
+                  src="/logo_no_text.png"
+                  alt="apirra logo"
+                  width={75}
+                  height={75}
+                />
+              </IconButton>
+            </Link>
+          </Container>
+          <Hidden mdDown>
+            <List
+              component="nav"
+              aria-labelledby="main navigation"
+              className={classes.navDisplayFlex}
+            >
+              {navLinks.map(({ title, path }) => {
+                if (title === "Products")
+                  return (
+                    <div key={title}>
+                      <Menu
+                        id="simple-menu1"
+                        anchorEl={anchorEl1}
+                        keepMounted
+                        open={Boolean(anchorEl1)}
+                        onClose={handleClose1}
+                        onClick={handleClose1}
+                      >
+                        <Link href={path[0].path}>
+                          <MenuItem>{path[0].title}</MenuItem>
+                        </Link>
+                        <Link href={path[1].path}>
+                          <MenuItem>{path[1].title}</MenuItem>
+                        </Link>
+                      </Menu>
+                      <ListItem
+                        button
+                        className={classes.itemHover}
+                        onClick={handleClick1}
+                      >
+                        <ListItemText
+                          disableTypography
+                          primary={title}
+                          className={isOrarion(title)}
+                        />
+                        {openProducts ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                      </ListItem>
+                    </div>
+                  );
+                if (title === "Services")
+                  return (
+                    <div key={title}>
+                      <Menu
+                        id="simple-menu2"
+                        anchorEl={anchorEl2}
+                        keepMounted
+                        open={Boolean(anchorEl2)}
+                        onClose={handleClose2}
+                        onClick={handleClose2}
+                      >
+                        <Link href={path[0].path}>
+                          <MenuItem>{path[0].title}</MenuItem>
+                        </Link>
+                        <Link href={path[1].path}>
+                          <MenuItem>{path[1].title}</MenuItem>
+                        </Link>
+                        <Link href={path[2].path}>
+                          <MenuItem>{path[2].title}</MenuItem>
+                        </Link>
+                      </Menu>
+                      <ListItem
+                        button
+                        className={classes.itemHover}
+                        onClick={handleClick2}
+                      >
+                        <ListItemText
+                          disableTypography
+                          primary={title}
+                          className={isOrarion(title)}
+                        />
+                        {openServices ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                      </ListItem>
+                    </div>
+                  );
+                else
+                  return (
+                    <Link href={path} key={title}>
+                      <ListItem button className={classes.itemHover}>
+                        <ListItemText
+                          disableTypography
+                          primary={title}
+                          className={isOrarion(title)}
+                        />
+                      </ListItem>
+                    </Link>
+                  );
+              })}
+            </List>
+          </Hidden>
+          <Hidden mdUp>
+            <NavDrawer navLinks={navLinks} />
+          </Hidden>
+        </Toolbar>
+      </AppBar>
+      {/* </HideOnScroll> */}
+      <div id="back-to-top-anchor" className={classes.anchor} />
       <BackToTop>
         <Fab color="secondary" size="large" aria-label="scroll back to top">
           <KeyboardArrowUp />

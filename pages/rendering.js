@@ -19,7 +19,6 @@ export default function Rendering() {
             3D Rendering
           </Typography>
           <ProTip />
-          <Copyright />
         </Box>
       </Container>
       <Footer
