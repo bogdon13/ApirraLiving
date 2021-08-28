@@ -59,6 +59,7 @@ const useStyles = makeStyles({
     color: "#f1f1f1",
     margin: `auto`,
     textAlign: `center`,
+    fontSize: "110%",
   },
   itemHover: {
     borderRadius: "30px",
@@ -72,7 +73,7 @@ const useStyles = makeStyles({
     color: `${theme.palette.orarion.main}`,
     fontFamily: "Book Antigua, serif",
     textAlign: `center`,
-    fontSize: `large`,
+    fontSize: `110%`,
   },
   anchor: {
     display: "hidden",
@@ -129,8 +130,8 @@ const Navbar = () => {
                 <Image
                   src="/logo_no_text.png"
                   alt="apirra logo"
-                  width={75}
-                  height={75}
+                  width={100}
+                  height={100}
                 />
               </IconButton>
             </Link>

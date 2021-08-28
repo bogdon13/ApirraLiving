@@ -8,10 +8,19 @@ import Link from "../src/Link";
 import Copyright from "../src/Copyright";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
+import Head from "next/head";
 
 export default function Rendering() {
   return (
     <>
+      <Head>
+        <title>3D Rendering</title>
+        <link rel="shortcut icon" href="/favicon-16x16.png" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
       <Navbar />
       <Container maxWidth="sm">
         <Box sx={{ my: 4 }}>

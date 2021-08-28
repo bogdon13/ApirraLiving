@@ -1,60 +1,111 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import Image from "next/image";
+import Link from "next/link";
+import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 
-function Copyright() {
+const Footer = () => {
   return (
-    <Typography variant="body2" color="textSecondary" align="left">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
+    <MDBFooter
+      style={{ backgroundColor: "#131726", position: "relative" }}
+      className="font-small pt-4 mt-4"
+    >
+      <MDBContainer className="text-center text-md-left">
+        <MDBRow className="text-center text-md-left mt-3 pb-3">
+          <MDBCol md="3" lg="3" xl="3" className="mx-auto mt-3">
+            {/* <h6 className="text-uppercase mb-4 font-weight-bold">
+              Company name
+            </h6> */}
+            <Link href="/">
+              <IconButton edge="start" color="inherit" aria-label="home">
+                <Image
+                  src="/logo.png"
+                  alt="apirra logo"
+                  width={150}
+                  height={150}
+                />
+              </IconButton>
+            </Link>
+            <ul className="list-unstyled list-inline">
+              <li className="list-inline-item">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+            </ul>
+          </MDBCol>
+          <hr className="w-100 clearfix d-md-none" />
+          <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
+            <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <Link href="/building-supplies">Building Supplies</Link>
+            </p>
+            <p>
+              <Link href="/furniture">Furniture</Link>
+            </p>
+            <p>
+              <Link href="/Flooring">Flooring</Link>
+            </p>
+            <p>
+              <Link href="/lighting">Lighting</Link>
+            </p>
+          </MDBCol>
+          <hr className="w-100 clearfix d-md-none" />
+          <MDBCol md="3" lg="2" xl="2" className="mx-auto mt-3">
+            <h6 className="text-uppercase mb-4 font-weight-bold">Services</h6>
+            <p>
+              <Link href="/apirra-homes">Apirra Homes</Link>
+            </p>
+            <p>
+              <Link href="/rendering">3D Rendering</Link>
+            </p>
+            <p>
+              <Link href="/local-contracting">Local Contracting</Link>
+            </p>
+          </MDBCol>
+          <hr className="w-100 clearfix d-md-none" />
+          <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
+            <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>
+              <i className="fa fa-home mr-3" /> New York, NY 10012, US
+            </p>
+            <p>
+              <i className="fa fa-envelope mr-3" /> info@gmail.com
+            </p>
+            <p>
+              <i className="fa fa-phone mr-3" /> + 01 234 567 88
+            </p>
+            <p>
+              <i className="fa fa-print mr-3" /> + 01 234 567 89
+            </p>
+          </MDBCol>
+        </MDBRow>
+        <hr />
+        <MDBRow className="d-flex align-items-center">
+          {/* <MDBCol md="8" lg="8">
+            <p className="text-center text-md-left grey-text">
+              &copy; {new Date().getFullYear()} Copyright:{" "}
+              <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+            </p>
+          </MDBCol>
+          <MDBCol md="4" lg="4" className="ml-lg-0">
+            <div className="text-center text-md-right"></div>
+          </MDBCol> */}
+        </MDBRow>
+      </MDBContainer>
+    </MDBFooter>
   );
-}
-
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    // marginTop: theme.spacing(8),
-    padding: theme.spacing(6, 0),
-    position: "absolute",
-    bottom: 0,
-    width: "100%",
-    textAlign: "left",
-  },
-}));
-
-export default function Footer(props) {
-  const classes = useStyles();
-  const { description, title } = props;
-
-  return (
-    <footer className={classes.footer}>
-      <Container maxWidth="lg">
-        <Typography variant="h6" align="left" gutterBottom>
-          {title}
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="left"
-          color="textSecondary"
-          component="p"
-        >
-          {description}
-        </Typography>
-        <Copyright />
-      </Container>
-    </footer>
-  );
-}
-
-Footer.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string,
 };
+
+export default Footer;
