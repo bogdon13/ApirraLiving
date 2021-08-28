@@ -273,6 +273,7 @@ const NavDrawer = ({ navLinks }) => {
         anchor="top"
         open={state.top}
         onClose={toggleDrawer("top", false)}
+        style={{ marginBottom: "2rem" }}
         // onOpen={toggleDrawer("top", true)}
       >
         {navDrawerList("top")}
