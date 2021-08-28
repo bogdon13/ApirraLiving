@@ -20,6 +20,8 @@ import theme from "../scripts/theme";
 const NavDrawer = ({ navLinks }) => {
   const [state, setState] = useState({ top: false });
   const [open, setOpen] = useState(false);
+  const [openProducts, setOpenProducts] = useState(false);
+  const [openServices, setOpenServices] = useState(false);
   const [style, setStyle] = useState(`${theme.palette.primary.main}`);
 
   const useStyles = makeStyles({
@@ -32,7 +34,7 @@ const NavDrawer = ({ navLinks }) => {
       backgroundColor: `${theme.palette.primary.hover}`,
     },
     nav: {
-      marginTop: "25%",
+      marginTop: "15%",
     },
     linkText: {
       textDecoration: `none`,
@@ -64,11 +66,18 @@ const NavDrawer = ({ navLinks }) => {
   });
   const classes = useStyles();
 
-  const handleClick = () => {
-    if (!open) {
+  const handleClickProducts = () => {
+    if (!openProducts) {
     }
-    setOpen(!open);
+    setOpenProducts(!openProducts);
   };
+
+  const handleClickServices = () => {
+    if (!openServices) {
+    }
+    setOpenServices(!openServices);
+  };
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -97,9 +106,9 @@ const NavDrawer = ({ navLinks }) => {
                 <ListItem
                   button
                   className={classes.itemHover}
-                  onClick={handleClick}
+                  onClick={handleClickProducts}
                 >
-                  {open ? (
+                  {openProducts ? (
                     <ExpandLessIcon fontSize="large" style={{ opacity: 0 }} />
                   ) : (
                     <ExpandMoreIcon fontSize="large" style={{ opacity: 0 }} />
@@ -109,7 +118,7 @@ const NavDrawer = ({ navLinks }) => {
                     primary={title}
                     className={isOrarion(title)}
                   />
-                  {open ? (
+                  {openProducts ? (
                     <ExpandLessIcon
                       fontSize="large"
                       style={{ color: `white` }}
@@ -122,7 +131,7 @@ const NavDrawer = ({ navLinks }) => {
                   )}
                 </ListItem>
 
-                <Collapse in={open} timeout="auto" unmountOnExit>
+                <Collapse in={openProducts} timeout="auto" unmountOnExit>
                   <Divider />
                   <List
                     className={classes.subList}
@@ -151,77 +160,75 @@ const NavDrawer = ({ navLinks }) => {
                 </Collapse>
               </div>
             );
-          else if (title === "Services") {
-          }
-          //  else if (title === "Services")
-          //   return (
-          //     <div key={title}>
-          //       <ListItem
-          //         button
-          //         className={classes.itemHover}
-          //         onClick={handleClick}
-          //       >
-          //         {open ? (
-          //           <ExpandLessIcon fontSize="large" style={{ opacity: 0 }} />
-          //         ) : (
-          //           <ExpandMoreIcon fontSize="large" style={{ opacity: 0 }} />
-          //         )}
-          //         <ListItemText
-          //           disableTypography
-          //           primary={title}
-          //           className={isOrarion(title)}
-          //         />
-          //         {open ? (
-          //           <ExpandLessIcon
-          //             fontSize="large"
-          //             style={{ color: `white` }}
-          //           />
-          //         ) : (
-          //           <ExpandMoreIcon
-          //             fontSize="large"
-          //             style={{ color: `white` }}
-          //           />
-          //         )}
-          //       </ListItem>
+          else if (title === "Services")
+            return (
+              <div key={title}>
+                <ListItem
+                  button
+                  className={classes.itemHover}
+                  onClick={handleClickServices}
+                >
+                  {openServices ? (
+                    <ExpandLessIcon fontSize="large" style={{ opacity: 0 }} />
+                  ) : (
+                    <ExpandMoreIcon fontSize="large" style={{ opacity: 0 }} />
+                  )}
+                  <ListItemText
+                    disableTypography
+                    primary={title}
+                    className={isOrarion(title)}
+                  />
+                  {openServices ? (
+                    <ExpandLessIcon
+                      fontSize="large"
+                      style={{ color: `white` }}
+                    />
+                  ) : (
+                    <ExpandMoreIcon
+                      fontSize="large"
+                      style={{ color: `white` }}
+                    />
+                  )}
+                </ListItem>
 
-          //       <Collapse in={open} timeout="auto" unmountOnExit>
-          //         <Divider />
-          //         <List
-          //           className={classes.subList}
-          //           component="div"
-          //           disablePadding
-          //         >
-          //           <ListItem button>
-          //             <Link href={path[0].path}>
-          //               <ListItemText
-          //                 className={isOrarion(title)}
-          //                 inset
-          //                 primary={path[0].title}
-          //               />
-          //             </Link>
-          //           </ListItem>
-          //           <ListItem button>
-          //             <Link href={path[1].path}>
-          //               <ListItemText
-          //                 className={isOrarion(title)}
-          //                 inset
-          //                 primary={path[1].title}
-          //               />
-          //             </Link>
-          //           </ListItem>
-          //           <ListItem button>
-          //             <Link href={path[2].path}>
-          //               <ListItemText
-          //                 className={isOrarion(title)}
-          //                 inset
-          //                 primary={path[2].title}
-          //               />
-          //             </Link>
-          //           </ListItem>
-          //         </List>
-          //       </Collapse>
-          //     </div>
-          //   );
+                <Collapse in={openServices} timeout="auto" unmountOnExit>
+                  <Divider />
+                  <List
+                    className={classes.subList}
+                    component="div"
+                    disablePadding
+                  >
+                    <ListItem button>
+                      <Link href={path[0].path}>
+                        <ListItemText
+                          className={isOrarion(title)}
+                          inset
+                          primary={path[0].title}
+                        />
+                      </Link>
+                    </ListItem>
+                    <ListItem button>
+                      <Link href={path[1].path}>
+                        <ListItemText
+                          className={isOrarion(title)}
+                          inset
+                          primary={path[1].title}
+                        />
+                      </Link>
+                    </ListItem>
+                    <ListItem button>
+                      <Link href={path[2].path}>
+                        <ListItemText
+                          className={isOrarion(title)}
+                          inset
+                          primary={path[2].title}
+                        />
+                      </Link>
+                    </ListItem>
+                  </List>
+                </Collapse>
+              </div>
+            );
           else
             return (
               <Link href={path} key={title}>
