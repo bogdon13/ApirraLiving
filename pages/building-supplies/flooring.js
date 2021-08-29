@@ -16,20 +16,22 @@ import Footer from "../../src/components/Footer";
 import { Parallax } from "react-parallax";
 
 const inlineStyle = {
-  background: "#fff",
+  background: "rgba(255, 255, 255, 0.3)",
+  borderRadius: "20px",
   left: "50%",
-  top: "35%",
+  top: "20%",
   position: "absolute",
   padding: "20px",
   transform: "translate(-50%, -50%)",
+  fontSize: "450%",
 };
 
 const inlineStyle2 = {
-  background: "#fff",
+  background: "rgba(255, 255, 255, 0.7)",
+  borderRadius: "20px",
   left: "50%",
-  top: "75%",
+  top: "50%",
   position: "absolute",
-
   transform: "translate(-50%, -50%)",
 };
 

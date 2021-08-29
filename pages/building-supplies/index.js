@@ -75,7 +75,6 @@ export default function BuildingSupplies() {
         />
       </Head>
       <Navbar />
-
       <div className={classes.imageContainer}>
         <Image
           placeholder="blur"
