@@ -12,12 +12,25 @@ import {
 import { makeStyles } from "@material-ui/styles";
 import Footer from "../../src/components/Footer";
 import { Parallax } from "react-parallax";
+import Link from "next/link";
+import theme from "../../src/scripts/theme";
+
+const inlineStyleSmall = {
+  background: "rgba(255, 255, 255, 0.7)",
+  borderRadius: "20px",
+  left: "50%",
+  top: "50%",
+  position: "absolute",
+  padding: "20px",
+  transform: "translate(-50%, -50%)",
+  fontSize: "450%",
+};
 
 const inlineStyle = {
   background: "rgba(255, 255, 255, 0.7)",
   borderRadius: "20px",
   left: "50%",
-  top: "20%",
+  top: "30%",
   position: "absolute",
   padding: "20px",
   transform: "translate(-50%, -50%)",
@@ -36,20 +49,42 @@ const inlineStyle2 = {
 };
 
 function ParallaxContainer(props) {
-  return (
-    <Parallax bgImage={props.img} strength={500}>
-      <div style={{ height: 800 }}>
-        <Typography variant="h1" style={inlineStyle}>
-          {props.title}
-        </Typography>
-      </div>
-      <div style={{ height: 400 }}>
-        <Typography variant="h3" style={inlineStyle2}>
-          {props.text}
-        </Typography>
-      </div>
-    </Parallax>
-  );
+  if (props.small === "true")
+    return (
+      <Parallax bgImage={props.img} strength={500}>
+        <div style={{ height: 400 }}>
+          <Typography variant="h3" style={inlineStyleSmall}>
+            <Link
+              href={props.link}
+              style={{ color: `${theme.palette.secondary.main}` }}
+            >
+              {props.title}
+            </Link>
+          </Typography>
+        </div>
+
+        {/* <div style={{ height: 100 }}>
+          <Button style={inlineStyle2}>
+            <Typography variant="h5">{props.text}</Typography>
+          </Button>
+        </div> */}
+      </Parallax>
+    );
+  else
+    return (
+      <Parallax bgImage={props.img} strength={500}>
+        <div style={{ height: 800 }}>
+          <Typography variant="h1" style={inlineStyle}>
+            {props.title}
+          </Typography>
+        </div>
+        <div style={{ height: 400 }}>
+          <Typography variant="h3" style={inlineStyle2}>
+            {props.text}
+          </Typography>
+        </div>
+      </Parallax>
+    );
 }
 
 export default ParallaxContainer;

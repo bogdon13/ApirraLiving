@@ -29,6 +29,9 @@ theme.typography.h1 = {
   "@media (min-width:600px)": {
     fontSize: "7rem",
   },
+  "@media (max-width:300px)": {
+    fontSize: "3rem",
+  },
 };
 theme.typography.h3 = {
   fontSize: "1.3rem",
@@ -36,7 +39,6 @@ theme.typography.h3 = {
   "@media (min-width:600px)": {
     fontSize: "1.7rem",
   },
-  
 };
 theme.typography.h4 = {
   fontSize: "1.2rem",

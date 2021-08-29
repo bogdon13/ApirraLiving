@@ -20,6 +20,7 @@ import ToSupplies from "../../src/components/ToSupplies";
 import lumberImage from "../../public/lumber.jpg";
 import Head from "next/head";
 import theme from "../../src/scripts/theme";
+import ParallaxContainer from "../../src/components/ParallaxContainer";
 
 const useStyles = makeStyles({
   imageContainer: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles({
   body: {
     margin: "auto",
     "@media (min-width:600px)": {
-      width: "60vw",
+      width: "50vw",
     },
   },
   downButton: {
@@ -47,23 +48,6 @@ const useStyles = makeStyles({
 export default function BuildingSupplies() {
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:600px)");
-  const IfMatches = () => {
-    if (matches) {
-      return (
-        <>
-          <div id="supplies-album" className={classes.anchor} />
-          <SuppliesAlbum />
-        </>
-      );
-    } else {
-      return (
-        <>
-          <div id="supplies-album" className={classes.anchor} />
-          <SuppliesAlbum />
-        </>
-      );
-    }
-  };
   return (
     <>
       <Head>
@@ -116,19 +100,80 @@ export default function BuildingSupplies() {
                   material you need for your next big project. Contact us to
                   find out more!
                 </Typography>
+                <ToSupplies>
+                  <Button
+                    size="large"
+                    className={classes.downButton}
+                    style={{ marginBottom: "12rem" }}
+                    disabled
+                  >
+                    <KeyboardArrowDown
+                      fontSize="large"
+                      className={classes.downButton}
+                    />
+                  </Button>
+                </ToSupplies>
+                <ParallaxContainer
+                  img={"/laminate.jpg"}
+                  title={"Flooring"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/flooring"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/kitchen.jpg"}
+                  title={"Kitchen"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/kitchen"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/lights.jpg"}
+                  title={"Lights"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/lighting"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/bathroom.jpg"}
+                  title={"Bathroom"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/washroom"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/door.jpg"}
+                  title={"Doors"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/doors"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/handles.jpg"}
+                  title={"Metal Hardware"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/metal-hardware"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/blinds.jpg"}
+                  title={"Window Coverings"}
+                  text="View"
+                  small="true"
+                  link="/building-supplies/window-coverings"
+                ></ParallaxContainer>
+                <ParallaxContainer
+                  img={"/card_background.png"}
+                  title={"Contact us for more catalogues."}
+                  text="View"
+                  small="true"
+                  link="/about"
+                ></ParallaxContainer>
               </div>
             </Fade>
           </Grid>
 
-          <ToSupplies>
-            <Button size="large" className={classes.downButton}>
-              <KeyboardArrowDown
-                fontSize="large"
-                className={classes.downButton}
-              />
-            </Button>
-          </ToSupplies>
-          <IfMatches />
+          {/* <IfMatches /> */}
         </Grid>
       </div>
       <Footer />
