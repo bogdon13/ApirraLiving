@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import Footer from "../../src/components/Footer";
+import ParallaxContainer from "../../src/components/ParallaxContainer";
 
 import { Parallax } from "react-parallax";
 
@@ -53,24 +54,11 @@ function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <Navbar></Navbar>
-      <Parallax bgImage="/window-cover.jpg" strength={500}>
-        <div style={{ height: 800 }}>
-          <h1 style={inlineStyle}>Window Coverings</h1>
-        </div>
-        <div style={{ height: 400 }}>
-          <div style={inlineStyle2}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            lobortis rhoncus leo non dictum. Donec nisi mi, sodales sed mattis
-            ac, pellentesque id mauris. Maecenas consequat porttitor massa eget
-            eleifend. Nam vel imperdiet ante. Praesent dictum, massa nec euismod
-            placerat, turpis augue ornare lectus, et iaculis ante nibh in magna.
-            Pellentesque vulputate justo eget est condimentum, at feugiat elit
-            congue. Sed volutpat nec ex sed malesuada. In nec aliquam eros, quis
-            bibendum lorem. Vivamus posuere a mauris a vestibulum. Integer
-            tellus urna, hendrerit ac tellus vitae, congue viverra nulla.
-          </div>
-        </div>
-      </Parallax>
+      <ParallaxContainer
+        img={"/window-cover.jpg"}
+        title={"Window Coverings"}
+        text="Catalog"
+      ></ParallaxContainer>
       <Footer />
     </div>
   );

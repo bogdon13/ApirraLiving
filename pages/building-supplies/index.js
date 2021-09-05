@@ -38,7 +38,8 @@ const useStyles = makeStyles({
     width: 70,
     height: 70,
     borderRadius: "30px",
-    color: `${theme.palette.secondary.main}`,
+    color: "#222529",
+    marginTop: "2rem",
   },
   anchor: {
     display: "hidden",
