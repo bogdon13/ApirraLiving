@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import ProTip from "../src/ProTip";
-import Link from "../src/Link";
+import Link from "next/link";
 import Copyright from "../src/Copyright";
 import Navbar from "../src/components/Navbar";
 import Head from "next/head";
@@ -105,22 +105,23 @@ export default function Furniture() {
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={6} sm={3}>
-            <Button
+            {/* <Button
               variant="contained"
               size="large"
               className={classes.residentialBtn}
             >
               <Typography variant="h4">Residential</Typography>
-            </Button>
+            </Button> */}
+            {/* <Link href="" className={classes.residentialBtn}></Link> */}
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Button
+            {/* <Button
               variant="contained"
               size="large"
               className={classes.commercialBtn}
             >
               <Typography variant="h4">Commercial</Typography>
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </div>

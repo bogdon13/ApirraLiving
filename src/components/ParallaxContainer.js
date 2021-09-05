@@ -17,7 +17,7 @@ import theme from "../../src/scripts/theme";
 
 const inlineStyleSmall = {
   background: "rgba(255, 255, 255, 0.7)",
-  borderRadius: "20px",
+  borderRadius: "5px",
   left: "50%",
   top: "50%",
   position: "absolute",
@@ -27,25 +27,27 @@ const inlineStyleSmall = {
 };
 
 const inlineStyle = {
-  background: "rgba(255, 255, 255, 0.7)",
-  borderRadius: "20px",
+  background: "rgba(10, 10, 10, 0.7)",
+  color: "white",
+  borderRadius: "5px",
   left: "50%",
   top: "30%",
   position: "absolute",
   padding: "20px",
   transform: "translate(-50%, -50%)",
-  fontSize: "450%",
+  fontSize: "4rem",
 };
 
 const inlineStyle2 = {
-  background: "rgba(255, 255, 255, 0.7)",
-  borderRadius: "20px",
+  background: "rgba(10, 10, 10, 0.7)",
+  color: "white",
+  borderRadius: "5px",
   left: "50%",
-  top: "50%",
+  top: "60%",
   position: "absolute",
   transform: "translate(-50%, -50%)",
   padding: "20px",
-  fontSize: "250%",
+  fontSize: "2rem",
 };
 
 function ParallaxContainer(props) {
@@ -53,13 +55,8 @@ function ParallaxContainer(props) {
     return (
       <Parallax bgImage={props.img} strength={500}>
         <div style={{ height: 400 }}>
-          <Typography variant="h3" style={inlineStyleSmall}>
-            <Link
-              href={props.link}
-              style={{ color: `${theme.palette.secondary.main}` }}
-            >
-              {props.title}
-            </Link>
+          <Typography variant="h1" style={inlineStyleSmall}>
+            <Link href={props.link}>{props.title}</Link>
           </Typography>
         </div>
 
@@ -72,8 +69,8 @@ function ParallaxContainer(props) {
     );
   else
     return (
-      <Parallax bgImage={props.img} strength={500}>
-        <div style={{ height: 800 }}>
+      <Parallax bgImage={props.img} strength={800}>
+        <div style={{ height: 500 }}>
           <Typography variant="h1" style={inlineStyle}>
             {props.title}
           </Typography>

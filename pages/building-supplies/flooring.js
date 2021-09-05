@@ -75,7 +75,6 @@ function App() {
         title={"PVC Patio"}
         text="We fulfill requests for a variety of PVC patios."
       ></ParallaxContainer>
-
       <Footer />
     </div>
   );
