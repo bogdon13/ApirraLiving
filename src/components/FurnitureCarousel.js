@@ -29,6 +29,7 @@ const FurnitureCarousel = (props) => {
         swipeable={false}
         draggable={false}
         ssr={true}
+        infinite={true}
         itemClass="carousel-item-padding-150-px"
       >
         {props.images.map((image) => (
