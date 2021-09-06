@@ -33,6 +33,16 @@ theme.typography.h1 = {
     fontSize: "3rem",
   },
 };
+theme.typography.h2 = {
+  fontSize: "2.5rem",
+  fontWeight: 500,
+  "@media (min-width:600px)": {
+    fontSize: "3rem",
+  },
+  "@media (max-width:300px)": {
+    fontSize: "2rem",
+  },
+};
 theme.typography.h3 = {
   fontSize: "1.3rem",
   fontWeight: 500,
@@ -44,6 +54,20 @@ theme.typography.h4 = {
   fontSize: "1.2rem",
   "@media (min-width:600px)": {
     fontSize: "1.5rem",
+  },
+};
+
+theme.typography.h6 = {
+  fontSize: "5rem",
+  fontFamily: "Arial Black",
+  "@media (min-width:590px)": {
+    fontSize: "9rem",
+  },
+  "@media (max-width:420px)": {
+    fontSize: "3.5rem",
+  },
+  "@media (max-width:300px)": {
+    fontSize: "3rem",
   },
 };
 

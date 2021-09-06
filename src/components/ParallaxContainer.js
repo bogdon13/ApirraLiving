@@ -59,12 +59,6 @@ function ParallaxContainer(props) {
             <Link href={props.link}>{props.title}</Link>
           </Typography>
         </div>
-
-        {/* <div style={{ height: 100 }}>
-          <Button style={inlineStyle2}>
-            <Typography variant="h5">{props.text}</Typography>
-          </Button>
-        </div> */}
       </Parallax>
     );
   else

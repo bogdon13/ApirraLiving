@@ -11,7 +11,6 @@ const useStyles = makeStyles({
     bottom: 0,
     minWidth: "100%",
     minHeight: "100%",
-    filter: "brightness(30%)",
     zIndex: -1,
     background: `#000`,
   },

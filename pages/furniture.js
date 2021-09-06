@@ -14,6 +14,8 @@ import { makeStyles } from "@material-ui/styles";
 import couchImage from "../public/couch.jpg";
 import Image from "next/image";
 import { Grid } from "@material-ui/core";
+import FurnitureCarousel from "../src/components/FurnitureCarousel";
+import FurnitureLightbox from "../src/components/FurnitureLightbox";
 
 const useStyles = makeStyles({
   imageContainer: {
@@ -28,41 +30,41 @@ const useStyles = makeStyles({
     transform: "translate(-50%, -50%)",
     marginTop: "1rem",
   },
-  residentialBtn: {
+  hoveringTextRes: {
     position: "absolute",
     top: "60%",
     left: "40%",
     transform: "translate(-50%, -50%)",
     border: "none",
-    backgroundColor: `${theme.palette.standard.main}`,
-    color: `${theme.palette.primary.main}`,
-    "&:hover": {
-      border: "none",
-      backgroundColor: `${theme.palette.standard.main}`,
-      color: `${theme.palette.primary.main}`,
-    },
-    "@media (max-width:800px)": {
-      color: `${theme.palette.primary.main}`,
-      backgroundColor: `${theme.palette.standard.main}`,
-    },
+    // backgroundColor: `${theme.palette.standard.main}`,
+    color: `white`,
+    // "&:hover": {
+    //   border: "none",
+    //   backgroundColor: `${theme.palette.standard.main}`,
+    //   color: `${theme.palette.primary.main}`,
+    // },
+    // "@media (max-width:800px)": {
+    //   color: `${theme.palette.primary.main}`,
+    //   backgroundColor: `${theme.palette.standard.main}`,
+    // },
   },
-  commercialBtn: {
+  hoveringTextCom: {
     position: "absolute",
     top: "60%",
     left: "60%",
     transform: "translate(-50%, -50%)",
     border: "none",
-    backgroundColor: `${theme.palette.standard.main}`,
-    color: `${theme.palette.primary.main}`,
-    "&:hover": {
-      border: "none",
-      backgroundColor: `${theme.palette.standard.main}`,
-      color: `${theme.palette.primary.main}`,
-    },
-    "@media (max-width:800px)": {
-      color: `${theme.palette.primary.main}`,
-      backgroundColor: `${theme.palette.standard.main}`,
-    },
+    // backgroundColor: `${theme.palette.standard.main}`,
+    color: `white`,
+    // "&:hover": {
+    //   border: "none",
+    //   backgroundColor: `${theme.palette.standard.main}`,
+    //   color: `${theme.palette.primary.main}`,
+    // },
+    // "@media (max-width:800px)": {
+    //   color: `${theme.palette.primary.main}`,
+    //   backgroundColor: `${theme.palette.standard.main}`,
+    // },
   },
   body: {
     margin: "auto",
@@ -79,7 +81,42 @@ const useStyles = makeStyles({
   anchor: {
     display: "hidden",
   },
+  carouselContainer: {
+    width: "80%",
+    height: "auto",
+    margin: "0 auto",
+    padding: "10px",
+    position: "relative",
+    marginTop: "50px",
+    marginBottom: "50px",
+  },
 });
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+    slidesToSlide: 3, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+};
+
+const carouselImages = [
+  "/carousel1.jpeg",
+  "/carousel2.jpeg",
+  "/carousel3.jpeg",
+  "/carousel4.jpeg",
+];
+
 export default function Furniture() {
   const classes = useStyles();
   return (
@@ -104,36 +141,28 @@ export default function Furniture() {
           Furniture
         </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={6} sm={3}>
-            {/* <Button
-              variant="contained"
-              size="large"
-              className={classes.residentialBtn}
-            >
-              <Typography variant="h4">Residential</Typography>
-            </Button> */}
-            {/* <Link href="" className={classes.residentialBtn}></Link> */}
+          {/* <Grid item xs={6} sm={3}>
+            <Typography className={classes.hoveringTextRes} variant="h2">
+              Residential
+            </Typography>
           </Grid>
           <Grid item xs={6} sm={3}>
-            {/* <Button
-              variant="contained"
-              size="large"
-              className={classes.commercialBtn}
-            >
-              <Typography variant="h4">Commercial</Typography>
-            </Button> */}
-          </Grid>
+            <Typography className={classes.hoveringTextCom} variant="h2">
+              Commercial
+            </Typography>
+          </Grid> */}
         </Grid>
       </div>
-      {/* <Container maxWidth="sm">
-        <Box sx={{ my: 4 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Furniture
-          </Typography>
-          <ProTip />
-          <Copyright />
-        </Box>
-      </Container> */}
+      <div className={classes.carouselContainer}>
+        <div>
+          <Typography variant="h3">Residential</Typography>
+          <FurnitureCarousel images={carouselImages} />
+        </div>
+        <div>
+          <Typography variant="h3">Commercial</Typography>
+          <FurnitureCarousel images={carouselImages} />
+        </div>
+      </div>
       <Footer />
     </>
   );
