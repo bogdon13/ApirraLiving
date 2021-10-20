@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 });
 
 export default function OrarionDetails() {
-  const classes = useStyles({});
+  const classes = useStyles();
   return (
     <div>
       <MDBRow className={classes.container}>

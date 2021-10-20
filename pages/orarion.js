@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/styles";
 import orarionImage from "../public/orarion.jpg";
 import OrarionInfo from "../src/components/OrarionInfo";
 import OrarionDetails from "../src/components/OrarionDetails";
+import OrarionContact from "../src/components/OrarionContact";
 import Image from "next/image";
 import { Grow } from "@material-ui/core";
 
@@ -41,6 +42,7 @@ const useStyles = makeStyles({
     textAlign: "center",
     overflowX: "hidden",
   },
+  contact: { textAlign: "center", overflowX: "hidden" },
 });
 
 export default function Orarion() {
@@ -79,6 +81,9 @@ export default function Orarion() {
       </div>
       <div className={classes.highlights}>
         <OrarionInfo type="bottom" />
+      </div>
+      <div className={classes.contact}>
+        <OrarionContact />
       </div>
       <Footer />
     </>
